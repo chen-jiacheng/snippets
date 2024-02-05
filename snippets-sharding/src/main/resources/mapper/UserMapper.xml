@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chenjiacheng.snippets.sharding.dao.mapper.UserMapper">
+    <insert id="insertUser" parameterType="com.chenjiacheng.snippets.sharding.dao.model.User">
+        insert into user(name,age,sex) values ( #{name},#{age},#{sex})
+    </insert>
+
+    <select id="getUserById" resultType="com.chenjiacheng.snippets.sharding.dao.model.User" parameterType="java.lang.Long">
+        select * from user where id = #{id}
+    </select>
+</mapper>

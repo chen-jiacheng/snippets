@@ -1,0 +1,28 @@
+package com.chenjiacheng.snippets.sharding.config;
+
+import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
+
+/**
+ * Created by chenjiacheng on 2024/2/5 23:19
+ *
+ * @author chenjiacheng
+ * @since 1.0.0
+ */
+@Configuration
+public class DataSourceConfig {
+
+    @Bean
+    @ConfigurationProperties("g1")
+    public HikariDataSource dataSource(DataSourceProperties properties) {
+        return properties.initializeDataSourceBuilder().type(HikariDataSource.class)
+                .build();
+    }
+
+}
