@@ -1,6 +1,6 @@
 package com.chenjiacheng.snippets.sharding.dao.mapper;
 
-import com.chenjiacheng.snippets.sharding.SnippetsShardingApplicationTest;
+import com.chenjiacheng.snippets.sharding.ShardingJdbcApplicationTest;
 import com.chenjiacheng.snippets.sharding.dao.model.User;
 import com.chenjiacheng.snippets.sharding.service.UserService;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author chenjiacheng
  * @since 1.0.0
  */
-public class UserMapperTest extends SnippetsShardingApplicationTest {
+public class UserMapperTest extends ShardingJdbcApplicationTest {
 
     @Autowired
     private UserService userService;

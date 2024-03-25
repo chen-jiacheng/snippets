@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 @MapperScan("com.chenjiacheng.snippets.sharding.dao.mapper")
-public class SnippetsShardingApplicationTest {
+public class ShardingJdbcApplicationTest {
 
     @Test
     public void contextLoads() {

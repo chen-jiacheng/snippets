@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @MapperScan("com.chenjiacheng.snippets.sharding.dao.mapper")
 @SpringBootApplication(scanBasePackages = "com.chenjiacheng.snippets.sharding")
-public class SnippetsShardingApplication {
+public class ShardingJdbcApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SnippetsShardingApplication.class, args);
+        SpringApplication.run(ShardingJdbcApplication.class, args);
     }
 }

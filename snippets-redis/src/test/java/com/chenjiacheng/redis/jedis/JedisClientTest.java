@@ -1,6 +1,6 @@
 package com.chenjiacheng.redis.jedis;
 
-import com.chenjiacheng.redis.SnippetsRedisApplicationTest;
+import com.chenjiacheng.redis.RedisApplicationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -12,7 +12,7 @@ import org.springframework.data.redis.core.ValueOperations;
  * @author chenjiacheng
  * @since 1.0.0
  */
-public class JedisClientTest extends SnippetsRedisApplicationTest {
+public class JedisClientTest extends RedisApplicationTest {
 
     @Autowired
     private StringRedisTemplate redisTemplate;

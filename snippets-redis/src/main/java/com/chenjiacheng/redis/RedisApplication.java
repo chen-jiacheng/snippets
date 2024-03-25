@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 1.0.0
  */
 @SpringBootApplication
-public class SnippetsRedisApplication {
+public class RedisApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SnippetsRedisApplication.class,args);
+        SpringApplication.run(RedisApplication.class,args);
     }
 }

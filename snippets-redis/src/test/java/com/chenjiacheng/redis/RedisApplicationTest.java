@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 1.0.0
  */
 @SpringBootTest
-public class SnippetsRedisApplicationTest {
+public class RedisApplicationTest {
 
     @Test
     void contextLoader() {
