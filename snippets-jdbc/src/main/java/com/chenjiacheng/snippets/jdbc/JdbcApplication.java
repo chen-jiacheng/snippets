@@ -1,10 +1,8 @@
 package com.chenjiacheng.snippets.jdbc;
 
+import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by chenjiacheng on 2024/3/26 23:36
@@ -13,21 +11,28 @@ import java.util.Map;
  * @since 1.0.0
  */
 public class JdbcApplication {
+
+    public static final Properties properties;
+
+    static {
+        properties = new Properties();
+        try {
+            properties.load(ClassLoader.getSystemResourceAsStream("jdbc.properties"));
+            // 加载MySQL驱动程序
+            Class.forName(properties.getProperty("jdbc.driver"));
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
         Connection connection = null;
         try {
-            // 加载MySQL驱动程序
-            // mysql 5.x
-            Class.forName("com.mysql.jdbc.Driver");
-            // mysql 8.x
-            // Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // 建立数据库连接
-            // MySQL数据库连接信息
-            String url = "jdbc:mysql://localhost:3306/test";
-            String user = "root";
-            String password = "Yqywf,Rmhpy.1@";
-            connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(
+                    properties.getProperty("jdbc.url"),
+                    properties.getProperty("jdbc.username"),
+                    properties.getProperty("jdbc.password")
+            );
 
             // 执行SQL查询
             String query = "SELECT * FROM USER";
@@ -40,7 +45,6 @@ public class JdbcApplication {
                     }
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
