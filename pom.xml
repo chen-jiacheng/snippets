@@ -12,6 +12,7 @@
         <module>snippets-redis</module>
         <module>snippets-network</module>
         <module>snippets-reflect</module>
+        <module>snippets-jdbc</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
